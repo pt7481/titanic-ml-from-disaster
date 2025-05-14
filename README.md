@@ -1,2 +1,2 @@
 # titanic-ml-from-disaster
-Predict survival of Titanic passengers
+Kaggle Competition: Predict survival of Titanic passengers
