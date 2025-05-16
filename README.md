@@ -1,3 +1,5 @@
+# 🚢 Titanic: Machine Learning from Disaster
+
 ## Project Summary
 
 This project tackles the classic Kaggle challenge: predicting passenger survival on the Titanic using machine learning. It serves as a hands-on exercise in feature engineering, model development, and interpretability within a well-known dataset, allowing for deep exploration of structured data analysis and model evaluation techniques.
