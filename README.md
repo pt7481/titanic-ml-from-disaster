@@ -30,5 +30,3 @@ This project tackles the classic Kaggle challenge: predicting passenger survival
 - Continue experimenting with features and model configurations to improve accuracy score.
 - Continue refining SHAP-driven debugging workflows to triage false positives/negatives and identify data segments where the model is overconfident or blind.
 - Continue my skills development by entering the [House Prices - Advanced Regression Techniques](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques) competition!
-- Experiment with semi-supervised learning or active learning to handle small or ambiguous passenger groups.
-- Submit final models to Kaggle and track performance over time with versioned feature sets.
