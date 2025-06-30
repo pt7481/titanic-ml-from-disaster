@@ -9,7 +9,8 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history.  O
 ### What I Did
 
 * Designed a multi-stage strategy for optimizing model bias, variance, and generalizability to unseen data (see Figure 1).
-* Defined a model metrics hierarchy that prioritized minimizing log loss and maximizing survival recall to evaluate the most meaningful metrics while accounting for imbalanced survival classes in the training data.
+* Split training data set into separate training and holdout sets to enable optimizing bias/variance and evaluate model generalizability prior to test prediction submission to Kaggle (see Figure 2).
+* Defined model evaluation metric priority to evaluate the most meaningful metrics while accounting for imbalanced survival classes in the training data (see Figure 3).
 * Selected Logistic Regression model type to maximize interpretability of model outputs and explainability to non-technical audiences.
 * Performed data preparation tasks such as exploratory data analysis (EDA), missing value imputation, and feature engineering in order to support model development.
 * Implemented reusable model evaluation framework consisting of metrics reporting, confusion matrices, precision-recall curve and SHAP visualizations.
@@ -19,6 +20,12 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history.  O
 
 ![Model Development Stages, Goals, and Techniques](https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicModelDevelopmentStages_Thoughtswork.jpg)
 **Figure 1:** Model Development Stages, Goals, and Techniques
+
+![Data Set Strategy](https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicDataSetStrategy_Thoughtswork.jpg)
+**Figure 2:** Data Set Strategy
+
+![Model Evaluation Metric Priority](https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicEvaluationMetricPriority_Thoughtswork.jpg)
+**Figure 3:** Model Evaluation Metric Priority
 
 ---
 
