@@ -8,7 +8,7 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history.  O
 
 ### What I Did
 
-* Designed a multi-stage strategy for optimizing model bias, variance, and generalizability to unseen data.
+* Designed a multi-stage strategy for optimizing model bias, variance, and generalizability to unseen data (see Figure 1).
 * Defined a model metrics hierarchy that prioritized minimizing log loss and maximizing survival recall to evaluate the most meaningful metrics while accounting for imbalanced survival classes in the training data.
 * Selected Logistic Regression model type to maximize interpretability of model outputs and explainability to non-technical audiences.
 * Performed data preparation tasks such as exploratory data analysis (EDA), missing value imputation, and feature engineering in order to support model development.
@@ -18,6 +18,7 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history.  O
 * Summarized current model performance in terms of key evaluation metrics and demonstrated tactics for improving performance by engineering new features based on model mis-prediction EDA.
 
 ![Model Development Stages, Goals, and Techniques](https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicModelDevelopmentStages_Thoughtswork.jpg)
+
 ---
 
 ### What I Learned
