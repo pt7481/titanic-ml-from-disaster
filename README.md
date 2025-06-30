@@ -21,11 +21,23 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history.  O
 ![Model Development Stages, Goals, and Techniques](https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicModelDevelopmentStages_Thoughtswork.jpg)
 **Figure 1:** Model Development Stages, Goals, and Techniques
 
-![Data Set Strategy](https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicDataSetStrategy_Thoughtswork.jpg)
-**Figure 2:** Data Set Strategy
+<div style="text-align:center">
+    <div>
+        <img width=400 src="https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicDataSetStrategy_Thoughtswork.jpg"/>
+    </div>
+    <div>
+        <b>Figure 2:</b> Data Set Strategy
+    </div>
+</div>
 
-![Model Evaluation Metric Priority](https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicEvaluationMetricPriority_Thoughtswork.jpg)
-**Figure 3:** Model Evaluation Metric Priority
+<div style="text-align:center">
+    <div>
+        <img width=500 src="https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicEvaluationMetricPriority_Thoughtswork.jpg"/>
+    </div>
+    <div>
+        <b>Figure 3:</b> Evaluation Metric Priority
+    </div>
+</div>
 
 ---
 
