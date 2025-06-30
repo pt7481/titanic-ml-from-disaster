@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>titanic_ml_from_disaster__paultongyoo</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7603,21 +7603,21 @@ a.anchor-link {
 </li>
 <li><a href="#Feature-Engineering">Feature Engineering</a><ol>
 <li><a href="#Feature-Creation">Feature Creation</a></li>
-<li><a href="#Pipeline-Imputers">Pipeline Imputers</a></li>
+<li><a href="#Pipeline-Preprocessors">Pipeline Preprocessors</a></li>
 </ol>
 </li>
 <li><a href="#Model-Development">Model Development</a><ol>
-<li><a href="#Stage-1-Bias-Optimization">Stage 1: Bias Optimization</a></li>
+<li><a href="#Stage-1-Bias-Optimization">Stage 1 Bias Optimization</a></li>
 <li><a href="#Training-Set-Prediction-Mistake-Analysis">Training Set Prediction Mistake Analysis</a><ol>
 <li><a href="#Correct-vs-Mistake-Feature-Distribution-Comparison">Correct vs Mistake Feature Distribution Comparison</a></li>
 <li><a href="#Feature-Predictiveness-of-High-Confidence-Mistakes">Feature Predictiveness of High-Confidence Mistakes</a></li>
 <li><a href="#Model-Mis-Predictions-EDA">Model Mis-Predictions EDA</a></li>
 </ol>
 </li>
-<li><a href="#Stage-2-Generalization-Optimization">Stage 2: Generalization Optimization</a></li>
-<li><a href="#Stage-3-Final-Generalization-Evaluation">Stage 3: Final Generalization Evaluation</a></li>
+<li><a href="#Stage-2-Generalization-Optimization">Stage 2 Generalization Optimization</a></li>
+<li><a href="#Stage-3-Final-Generalization-Evaluation">Stage 3 Final Generalization Evaluation</a></li>
 <li><a href="#Stages-1-3-Evaluation-Summary">Stages 1-3 Evaluation Summary</a></li>
-<li><a href="#Stage-4-Submission-Evaluation">Stage 4: Submission Evaluation</a><ol>
+<li><a href="#Stage-4-Submission-Evaluation">Stage 4 Submission Evaluation</a><ol>
 <li><a href="#Submission-File-Generation">Submission File Generation</a></li>
 <li><a href="#Submission-Score-Evaluation">Submission Score Evaluation</a></li>
 </ol>
@@ -10289,7 +10289,7 @@ Baseline Accuracy (if predicting majority class): 0.6166
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Stage-1:-Bias-Optimization">Stage 1: Bias Optimization<a class="anchor-link" href="#Stage-1:-Bias-Optimization">¶</a></h4>
+<h4 id="Stage-1-Bias-Optimization">Stage 1 Bias Optimization<a class="anchor-link" href="#Stage-1-Bias-Optimization">¶</a></h4>
 </div>
 </div>
 </div>
@@ -11657,7 +11657,7 @@ Name: proportion, dtype: float64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Stage-2:-Generalization-Optimization">Stage 2: Generalization Optimization<a class="anchor-link" href="#Stage-2:-Generalization-Optimization">¶</a></h4>
+<h4 id="Stage-2-Generalization-Optimization">Stage 2 Generalization Optimization<a class="anchor-link" href="#Stage-2-Generalization-Optimization">¶</a></h4>
 </div>
 </div>
 </div>
@@ -15847,7 +15847,7 @@ Params: {'C': 3.3971549507689676, 'class_weight': 'balanced', 'fit_intercept': T
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Stage-3:-Final-Generalization-Evaluation">Stage 3: Final Generalization Evaluation<a class="anchor-link" href="#Stage-3:-Final-Generalization-Evaluation">¶</a></h4>
+<h4 id="Stage-3-Final-Generalization-Evaluation">Stage 3 Final Generalization Evaluation<a class="anchor-link" href="#Stage-3-Final-Generalization-Evaluation">¶</a></h4>
 </div>
 </div>
 </div>
@@ -16222,7 +16222,7 @@ Accuracy Variance: 0.0201
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Stage-4:-Submission-Evaluation">Stage 4: Submission Evaluation<a class="anchor-link" href="#Stage-4:-Submission-Evaluation">¶</a></h4>
+<h4 id="Stage-4-Submission-Evaluation">Stage 4 Submission Evaluation<a class="anchor-link" href="#Stage-4-Submission-Evaluation">¶</a></h4>
 </div>
 </div>
 </div>
@@ -16734,12 +16734,23 @@ dtype: float64</pre>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f1c1a282">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Ignore: Table of Contents Generator</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7636dc7e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [80]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -16808,17 +16819,17 @@ dtype: float64</pre>
         1. [Family Size](#Family-Size)
     1. [Feature Engineering](#Feature-Engineering)
         1. [Feature Creation](#Feature-Creation)
-        1. [Pipeline Imputers](#Pipeline-Imputers)
+        1. [Pipeline Preprocessors](#Pipeline-Preprocessors)
     1. [Model Development](#Model-Development)
-        1. [Stage 1: Bias Optimization](#Stage-1-Bias-Optimization)
+        1. [Stage 1 Bias Optimization](#Stage-1-Bias-Optimization)
         1. [Training Set Prediction Mistake Analysis](#Training-Set-Prediction-Mistake-Analysis)
             1. [Correct vs Mistake Feature Distribution Comparison](#Correct-vs-Mistake-Feature-Distribution-Comparison)
             1. [Feature Predictiveness of High-Confidence Mistakes](#Feature-Predictiveness-of-High-Confidence-Mistakes)
             1. [Model Mis-Predictions EDA](#Model-Mis-Predictions-EDA)
-        1. [Stage 2: Generalization Optimization](#Stage-2-Generalization-Optimization)
-        1. [Stage 3: Final Generalization Evaluation](#Stage-3-Final-Generalization-Evaluation)
+        1. [Stage 2 Generalization Optimization](#Stage-2-Generalization-Optimization)
+        1. [Stage 3 Final Generalization Evaluation](#Stage-3-Final-Generalization-Evaluation)
         1. [Stages 1-3 Evaluation Summary](#Stages-1-3-Evaluation-Summary)
-        1. [Stage 4: Submission Evaluation](#Stage-4-Submission-Evaluation)
+        1. [Stage 4 Submission Evaluation](#Stage-4-Submission-Evaluation)
             1. [Submission File Generation](#Submission-File-Generation)
             1. [Submission Score Evaluation](#Submission-Score-Evaluation)
 </pre>
