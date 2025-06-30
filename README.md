@@ -2,30 +2,57 @@
 
 ## Project Summary
 
-This project tackles the classic Kaggle challenge: predicting passenger survival on the Titanic using machine learning. It serves as a hands-on exercise in feature engineering, model development, and interpretability within a well-known dataset, allowing for deep exploration of structured data analysis and model evaluation techniques.
+The sinking of the Titanic is one of the most infamous shipwrecks in history.  On April 15, 1912, during her maiden voyage, the widely considered “unsinkable” RMS Titanic sank after colliding with an iceberg. Unfortunately, there weren’t enough lifeboats for everyone onboard, resulting in the death of 1502 out of 2224 passengers and crew.  While there was some element of luck involved in surviving, it seems some groups of people were more likely to survive than others.  In this challenge, Kaggle asked us to build a predictive model that answers the question: **“What sorts of people were more likely to survive?”** using passenger data (e.g. name, age, gender, socio-economic class, etc).
 
 ---
 
 ### What I Did
 
-- Conducted extensive feature engineering, combining domain knowledge and statistical validation to create globally smoothed target-encoded features and subgroup-specific smoothed features.
-- Designed features around Pclass-Sex cohorts using conditional masking, binning, and normalization strategies (e.g., Pclass_Title_normalized, Age_Group, Deck_bin).
-- Evaluated features using Chi-Squared tests, Cramér’s V, and cross-fold KL divergence, prioritizing variables with consistent distributions and statistically significant survival associations.
-- Built a high-performing XGBoostClassifier pipeline, using ablation testing, SHAP plots, and hyperparameter tuning (e.g., max_depth, min_child_weight, gamma, reg_alpha) to balance accuracy and generalization.  Achieved a mean average accuracy of 0.8114 across cross-validation of the Kaggle training data set.
+* Designed a multi-stage strategy for optimizing model bias, variance, and generalizability to unseen data.
+* Defined a model metrics hierarchy that prioritized minimizing log loss and maximizing survival recall to evaluate the most meaningful metrics while accounting for imbalanced survival classes in the training data.
+* Selected Logistic Regression model type to maximize interpretability of model outputs and explainability to non-technical audiences.
+* Performed data preparation tasks such as exploratory data analysis (EDA), missing value imputation, and feature engineering in order to support model development.
+* Implemented reusable model evaluation framework consisting of metrics reporting, confusion matrices, precision-recall curve and SHAP visualizations.
+* Integrated MLflow in order to track model optimization experiment results and log final model artifacts for future deployment.
+* Integrated Optuna in order to identify optimal model hyperparameters during each cross-validation iteration.
+* Summarized current model performance in terms of key evaluation metrics and demonstrated tactics for improving performance by engineering new features based on model mis-prediction EDA.
 ---
 
 ### What I Learned
 
-- High cross-validation accuracy on the training set doesn't always translate to strong performance on the unseen test set — my 0.8114 CV accuracy dropped to 0.7727 on Kaggle's hidden test set. This highlighted how easily models can overfit to patterns specific to the training distribution, especially when engineered features subtly leak group identity or encode rare patterns that don't generalize.
-- Smoothed rate encoding can outperform one-hot encoding when group sizes are sufficiently supported and carefully regularized to avoid leakage.
-- Subgroup relevance masking (e.g., using Pclass_Sex) is tricky to enforce in practice; even zeroing out or setting NaNs doesn't fully eliminate feature leakage in tree-based models.
-- KL divergence is a powerful diagnostic for assessing train–validation distribution shifts, especially for engineered composite features.
-- SHAP plots revealed how certain features (e.g., P3_Female_Embarked_smoothed, Deck_bin) mislead the model when data sparsity or masking wasn't properly handled.
-- Small gains in accuracy sometimes come at the cost of generalizability. Monitoring standard deviation in CV scores became as important as mean accuracy.
+* With regards to answering the question **"What sorts of people were more likely to survive?"**, the model currently identifies 2 subgroups as being more likely to survive and 20+ subgroups as being less likely to survive. 
+    * The imbalance towards subgroups predicting non-survival is likely due to the training data set mostly consisting of non-survivors (38% survived, 62% perished).
+    * Analysis of model mis-predictions identified 8+ subgroups that unpredicted survival, warranting further feature engineering (see Next Steps section).
+* Summary of Subgroup Insights:
+    * **Groups More Likely to Survive:**
+        * 1st and 2nd Class Females
+        * Passengers aged less than 10 years
+        * Passengers traveling with 3-4 family members
+    * **Examples of Groups Less Likely to Survive:**
+        * All males across 1st, 2nd, and 3rd Class tickets 
+        * Passengers aged 55 years and older
+        * Passengers not assigned Cabin or Deck designations 
+        * 3rd class passengers who embarked from Southampton, England
+* The following **metrics** were observed when evaluating the model's predictions of an **unseen portion of Kaggle's _training_ data** (179 passengers):
+    * **Accuracy:** **81%** of the passengers were predicted correctly.
+    * **Precision:** Of the passengers the model predicted to survive, **80%** of the passengers actually survived.
+    * **Recall:** Of the passengers that acutally survived, **79%** of the passengers were predicted to survive.
+    * Additional metrics used to optimize model performance were **Log Loss, PR-AUC, and F1.**
+* Each of the metrics above were **approximately 3-4% lower than baseline** suggesting unseen production data is more likely to perform worse if distribution shifts occur.  
+    * This **performance degradation was observed** when evaluating the model's prediction of **Kaggle's _test_ data set**, where Kaggle reported the model predicting test passenger survival with **77% accuracy.**
 ---
 
-### What's Next
+### Next Steps
 
-- Implement model ensembling to incorporate predictions from a complimentary model (e.g. LogisticRegression) to improve generalization to unseen data.
-- Continue experimenting with features and model configurations to improve accuracy score.
-- Continue refining SHAP-driven debugging workflows to triage false positives/negatives and identify data segments where the model is overconfident or blind.
+* **3-4% variance in model prediction performance of unseen training data indicate further model optimization is needed to improve model's performance with unseen test data.**
+* Initial investigation into model's mis-predictions ("mistakes") identified features warranted to improve survival recognition (recall) of the following groups: 
+    * 3rd class passengers from Southampton
+    * 3rd and 2nd class males
+    * Passengers without Cabin/Deck info
+    * Passengers with 5 or more family members
+* Once model performance variance between seen and unseen training data is reduced to 2 pp or less, **feature distribution shifts between training and test data should be investigated** if Kaggle submission accuracy does not increase to satisfactory levels.
+    * Tactics to experiment with include:
+        * Model prediction calibration to improve Logistic Regression model prediction probabilities
+        * Group-based stratification to ensure training set feature distribution closely matches test set feature distribution
+        * Sample reweighting to instruct model to emphasize input samples closely resembling test distribution
+        * Experimenting with tree-based and other model types, balancing tradeoff between model complexity and interpretability
