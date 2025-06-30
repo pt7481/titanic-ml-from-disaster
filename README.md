@@ -18,6 +18,7 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history.  O
 * Summarized current model performance in terms of key evaluation metrics and demonstrated tactics for improving performance by engineering new features based on model mis-prediction EDA.
 
 ![Model Development Stages, Goals, and Techniques](https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicModelDevelopmentStages_Thoughtswork.jpg)
+**Figure 1:** Model Development Stages, Goals, and Techniques
 
 ---
 
