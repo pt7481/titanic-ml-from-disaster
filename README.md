@@ -16,6 +16,8 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history.  O
 * Integrated MLflow in order to track model optimization experiment results and log final model artifacts for future deployment.
 * Integrated Optuna in order to identify optimal model hyperparameters during each cross-validation iteration.
 * Summarized current model performance in terms of key evaluation metrics and demonstrated tactics for improving performance by engineering new features based on model mis-prediction EDA.
+
+![Model Development Stages, Goals, and Techniques](https://thoughtswork-co.s3.us-east-2.amazonaws.com/TitanicModelDevelopmentStages_Thoughtswork.jpg)
 ---
 
 ### What I Learned
