@@ -43,12 +43,13 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history.  O
 
 ### What I Learned
 
-* With regards to answering the question **"What sorts of people were more likely to survive?"**, the model currently identifies 2 subgroups as being more likely to survive and 20+ subgroups as being less likely to survive. 
+* With regards to answering the question **"What sorts of people were more likely to survive?"**, the model currently identifies 4 subgroups as being more likely to survive and 20+ subgroups as being less likely to survive. 
     * The imbalance towards subgroups predicting non-survival is likely due to the training data set mostly consisting of non-survivors (38% survived, 62% perished).
     * Analysis of model mis-predictions identified 8+ subgroups that unpredicted survival, warranting further feature engineering (see Next Steps section).
 * Summary of Subgroup Insights:
     * **Groups More Likely to Survive:**
-        * 1st and 2nd Class Females
+        * 1st Class Females
+        * 2nd Class Females
         * Passengers aged less than 10 years
         * Passengers traveling with 3-4 family members
     * **Examples of Groups Less Likely to Survive:**
@@ -59,7 +60,7 @@ The sinking of the Titanic is one of the most infamous shipwrecks in history.  O
 * The following **metrics** were observed when evaluating the model's predictions of an **unseen portion of Kaggle's _training_ data** (179 passengers):
     * **Accuracy:** **81%** of the passengers were predicted correctly.
     * **Precision:** Of the passengers the model predicted to survive, **80%** of the passengers actually survived.
-    * **Recall:** Of the passengers that acutally survived, **79%** of the passengers were predicted to survive.
+    * **Recall:** Of the passengers that actually survived, **79%** of the passengers were predicted to survive.
     * Additional metrics used to optimize model performance were **Log Loss, PR-AUC, and F1.**
 * Each of the metrics above were **approximately 3-4% lower than baseline** suggesting unseen production data is more likely to perform worse if distribution shifts occur.  
     * This **performance degradation was observed** when evaluating the model's prediction of **Kaggle's _test_ data set**, where Kaggle reported the model predicting test passenger survival with **77% accuracy.**
