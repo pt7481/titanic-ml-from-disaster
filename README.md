@@ -1,4 +1,4 @@
-# 🚢 Titanic: Machine Learning from Disaster
+# 🚢 Kaggle Competition: Titanic Passenger Survival Classification
 
 ## Project Summary
 
